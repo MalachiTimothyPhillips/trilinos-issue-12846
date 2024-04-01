@@ -1,8 +1,10 @@
 #!/bin/bash
 #rm -rf build
-mkdir build
-./config_trilinos.sh
-./build_trilinos.sh
+#mkdir build
+#./config_trilinos.sh
+#./build_trilinos.sh
+
+rm -Rf CMakeCache.txt CMakeFiles build.ninja
 
 ARGS=(
   -GNinja
@@ -16,4 +18,6 @@ ARGS=(
 )
 
 set -o pipefail
-cmake "${ARGS[@]}" $TRILINOS | tee config.log
+cmake "${ARGS[@]}" . | tee config.log
+ninja
+#cmake --build ./build --target install -j8

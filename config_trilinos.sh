@@ -1,8 +1,8 @@
 #!/bin/bash
 
-mkdir -p "build/trilinos"
-cd "build/trilinos"
-#source $TRILINOS/cmake/std/atdm/load-env.sh cee-rhel7-cuda-opt-serial
+mkdir build/trilinos
+mkdir install/trilinos
+cd build/trilinos
 
 rm -Rf CMakeCache.txt CMakeFiles build.ninja
 
@@ -187,6 +187,7 @@ ARGS=(
   -D CMAKE_CXX_COMPILER=/projects/sierra/linux_rh7/SDK/mpi/openmpi/4.0.5-nvidia-11.2.1-RHEL7/bin/mpic++
   -D CMAKE_Fortran_COMPILER=/projects/sierra/linux_rh7/SDK/mpi/openmpi/4.0.5-nvidia-11.2.1-RHEL7/bin/mpif90
   -D CMAKE_CXX_STANDARD=17
+  -D CMAKE_INSTALL_PREFIX=../../install/trilinos
 )
 
 set -o pipefail

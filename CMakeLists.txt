@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.23)
 
 set(CMAKE_CXX_STANDARD 17)
 
+set(Trilinos_PATH install/trilinos)
+set(CMAKE_PREFIX_PATH ${Trilinos_PATH} ${CMAKE_PREFIX_PATH})
 find_package(Trilinos REQUIRED COMPONENTS Tpetra MueLu)
 
 message("Trilinos_AR = ${Trilinos_AR}")
