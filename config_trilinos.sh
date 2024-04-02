@@ -45,6 +45,9 @@ ARGS=(
   -D CMAKE_INSTALL_PREFIX=../../install/trilinos
   -DTrilinos_ENABLE_LINEAR_SOLVER_FACTORY_REGISTRATION:BOOL=ON
   -DTrilinos_ENABLE_ML:BOOL=ON
+
+  -DTpetra_INST_INT_LONG:BOOL=ON
+  -DTpetra_INST_INT_LONG_LONG:BOOL=OFF
 )
 
 set -o pipefail
